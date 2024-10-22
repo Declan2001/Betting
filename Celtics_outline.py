@@ -6,6 +6,7 @@ import numpy as np
 from nba_api.stats.endpoints import playercareerstats
 from nba_api.stats.endpoints import playergamelog
 import pandas as pd
+import seaborn as sns
 
 # Jason Tatum #0
 career = playercareerstats.PlayerCareerStats(player_id='1628369') 
@@ -17,10 +18,17 @@ Tatum_per_game_23_24 = gamelog.get_data_frames()[0]
 # This prints out a big table showing the correlation between different pieces of data
 #   This can be useful to pick which features to use in your model. Though I would say that
 #   21 cols is basically nothing.
-# You can see that I turned Win/Loss into True/False. Most times you cannot use text to optimize stuff
+# You can see that I turned Win/Loss into True/False. Most times you cannot use text to optimize stuff 
+    #!!!! Win/Loss prints out a number still big L turd man !!!!
 #   The team being played against is another col you can work on fitting into the model, prob useful
-Tatum_per_game_23_24['WL'] = Tatum_per_game_23_24['WL'].replace({ 'W': True, 'L': False })
-print(Tatum_per_game_23_24.iloc[0:67, 5:-1].corr())
+Tatum_per_game_23_24['WL'] = Tatum_per_game_23_24['WL'].replace({ 'W': True, 'L': False }) # broken read above
+corr_matrix = Tatum_per_game_23_24.iloc[0:67, 5:-1].corr()
+corr_matrix.to_csv('./StatsCodingCeltics/pwetty_data.csv', sep='\t',float_format='%.2f') # still ugly 
+corr_matrix.to_csv('./StatsCodingCeltics/real_data.csv')
+
+# Display with heat map what the kek is going on here
+
+
 
 # Data points
 """

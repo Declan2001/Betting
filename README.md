@@ -16,6 +16,9 @@ different versions of other libs. This way you don't have to manage it all globa
 
 `source venv/bin/activate`
 
+`venv/Scripts/Activate` (For windows)
+`Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process` (might need this too for permissions)
+
 This activates the virtual environment. Now python, pip, etc will use libs from the venv.
 You can end this by typing `deactivate`.
 
