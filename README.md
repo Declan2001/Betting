@@ -15,6 +15,7 @@ In short, it allows you to install libs in that folder, which is helpful b/c som
 different versions of other libs. This way you don't have to manage it all globally.
 
 `source venv/bin/activate`
+`venv\Scripts\Activate` (For Windows)
 
 `venv/Scripts/Activate` (For windows)
 `Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process` (might need this too for permissions)
