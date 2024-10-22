@@ -15,6 +15,7 @@ In short, it allows you to install libs in that folder, which is helpful b/c som
 different versions of other libs. This way you don't have to manage it all globally.
 
 `source venv/bin/activate`
+`venv\Scripts\Activate` (For Windows)
 
 This activates the virtual environment. Now python, pip, etc will use libs from the venv.
 You can end this by typing `deactivate`.
